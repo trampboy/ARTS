@@ -165,6 +165,7 @@ safeFreshBoxId(boxId) {
 ### Share
 #### JavaScript异步/同步代码执行顺序
 前面刚好提到```JavaScript执行顺序的坑```，我就展开具体谈谈。本篇文章大部分是参考文献[JavaScript: Execution of Synchronous and Asynchronous codes](https://medium.com/@siddharthac6/javascript-execution-of-synchronous-and-asynchronous-codes-40f3a199e687)，觉得不错，在此分享。
+
 在展开谈谈之前，我们先聊聊「JavaScript引擎」和「JavaScript运行环境」，因为在接下里的描述中会提到。
 ##### JavaScript引擎
 解析脚本和将其转换成可执行命令的程序
@@ -172,7 +173,8 @@ safeFreshBoxId(boxId) {
 执行命令中所需的工具、服务和函数库
 
 ##### 同步任务
-https://cdn-images-1.medium.com/max/1600/1*w5OfUVZk_FXBZ3Cbv9d3IA.png
+![Sync task](https://cdn-images-1.medium.com/max/1600/1*w5OfUVZk_FXBZ3Cbv9d3IA.png)
+
 1. Step 1，```First()函数体```被放入堆栈，执行时遇到```Second()函数体```
 2. Step 2，```Second()函数体```被放入堆栈，执行时遇到```Third()函数体```
 3. Step 3，```Third()函数体```被放入堆栈，执行结束后移出堆栈
@@ -180,7 +182,7 @@ https://cdn-images-1.medium.com/max/1600/1*w5OfUVZk_FXBZ3Cbv9d3IA.png
 5. Step 5，引擎继续执行```First()函数体```，执行结束后移出堆栈
 
 ##### 异步任务
-https://cdn-images-1.medium.com/max/1600/1*jL3DKqpxzQeiJgoIW9PaEA.png
+![Async tasl](https://cdn-images-1.medium.com/max/1600/1*jL3DKqpxzQeiJgoIW9PaEA.png)
 1. Step 1，```console.log("Hello ")```被放入堆栈，执行结束后移出堆栈
 2. Step 2，```setTimeout(callback, 2000)```被放入堆栈，```setTimeout```不是JavaScript引擎，是Web APIs，执行成功后移除堆栈
 3. Step 3，```console.log( "I am" )```被放入堆栈，执行结束后移出堆栈
