@@ -104,7 +104,7 @@ JavaScript库漏洞检测工具，用于Web和Node工程。可以通过命令号
 
 在请求锁的时候，生成唯一随机数，在释放锁时，判断是否和随机数一致，只有一致时才释放锁，这样可以保证只释放自己加的锁。但该方案只能保证单节点Redis，如果是Redis集群，则需要使用方案四。
 
-方案四 [Redlock算法](https://redis.io/topics/distlock)
+方案三 [Redlock算法](https://redis.io/topics/distlock)
 
 [中文版](http://ifeve.com/redis-lock/)
 
