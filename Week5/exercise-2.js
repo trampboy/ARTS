@@ -1,5 +1,8 @@
 "use strict";
 /**
+ * 有效的括号
+ * https://leetcode-cn.com/problems/valid-parentheses/
+ *
  * Created by JingHongGang on 2019-06-20.
  */
 var isValid1 = function(s) {
